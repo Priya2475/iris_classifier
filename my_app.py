@@ -23,7 +23,7 @@ petal_width=st.number_input("Petal Width (cm)",in_value=0.0, max_value=10.0, val
 if st.button("Predict Species"):
  prediction = model.predict([[sepal_length, sepal_width, petal_length, petal_width]])
  probability = model.predict_proba([[sepal_length, sepal_width, petal_length, petal_width]])
- species=iris.target_names[prediction][0]
+ species=iris.target_names[prediction[0]]
  st.success(f"Predicted Species: **{species.upper()}**")
  st.subheader("Prediction Confidence")
  st.write(
